@@ -61,3 +61,52 @@ def edit_publisher(request):
             return redirect('/publisher_list/')
 
     return render(request,'edit_publisher.html',{'obj':obj,'error':error})
+
+
+# 展示书籍
+def book_list(request):
+    all_books = models.Book.objects.all()
+    return render(request,'book_list.html',{'all_books':all_books})
+
+
+# 添加书籍
+def add_book(request):
+    # 添加书籍
+    if request.method == "POST":
+        book_name = request.POST.get('book_name')
+        pub_id = request.POST.get('pub_id')
+        # models.Book.objects.create(title=book_name,pub=models.Publisher.objects.get(pk=pub_id))  <=>
+        models.Book.objects.create(title=book_name,pub_id=pub_id)
+        return redirect('/book_list/')
+
+    # 查询所有的出版社
+    all_publishers = models.Publisher.objects.all()
+    return render(request, 'add_book.html', {'all_publishers': all_publishers})
+
+
+# 删除书籍
+def del_book(request):
+    pk = request.GET.get('id')
+    models.Book.objects.filter(pk=pk).delete()
+    return redirect('/book_list')
+
+
+# 编辑书籍
+def edit_book(request):
+    pk = request.GET.get('id')
+    book_obj = models.Book.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        # 获取提交的数据
+        book_name = request.POST.get('book_name')
+        pub_id = request.POST.get('pub_id')
+        # 修改数据
+        book_obj.title = book_name
+        # book_obj.pub_id = pub_id
+        book_obj.pub = models.Publisher.objects.get(pk=pub_id)
+        book_obj.save()
+        return redirect('/book_list/')
+    # 查询所有的出版社
+    all_publishers = models.Publisher.objects.all()
+
+    return render(request, 'edit_book.html', {'book_obj': book_obj, 'all_publishers': all_publishers})

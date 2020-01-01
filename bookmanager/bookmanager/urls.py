@@ -23,4 +23,8 @@ urlpatterns = [
     url(r'^add_publisher/',views.add_publisher),
     url(r'^del_publisher/',views.del_publisher),
     url(r'^edit_publisher/',views.edit_publisher),
+    url(r'^book_list/',views.book_list),
+    url(r'^add_book',views.add_book),
+    url(r'^del_book',views.del_book),
+    url(r'^edit_book/',views.edit_book)
 ]
