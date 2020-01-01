@@ -42,11 +42,9 @@ def edit_publisher(request):
     error = ''
     pk = request.GET.get('id')
     obj_list = models.Publisher.objects.filter(pk=pk)
-    print(obj_list)
     if not obj_list:
         return HttpResponse('要编辑的数据不存在')
     obj = obj_list[0]
-    print(obj)
 
     # 处理POST请求,编辑查找的数据
     if request.method == 'POST':
