@@ -8,3 +8,7 @@ class Publisher(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=255)
     pub = models.ForeignKey('Publisher',on_delete=models.CASCADE)
+
+class Author(models.Model):
+    name = models.CharField(max_length=32)
+    books = models.ManyToManyField('Book')

@@ -110,3 +110,53 @@ def edit_book(request):
     all_publishers = models.Publisher.objects.all()
 
     return render(request, 'edit_book.html', {'book_obj': book_obj, 'all_publishers': all_publishers})
+
+
+
+# 展示作者
+def author_list(request):
+    all_authors = models.Author.objects.all()
+    return render(request, 'author_list.html', {'all_authors': all_authors})
+
+
+# 增加作者
+def add_author(request):
+    if request.method == 'POST':
+        author_name = request.POST.get('author_name')
+        books = request.POST.getlist('books')
+
+        author_obj = models.Author.objects.create(name=author_name,)
+        author_obj.books.set(books)
+        return redirect('/author_list/')
+
+    all_books = models.Book.objects.all()
+    return render(request,'add_author.html',{'all_books': all_books})
+
+
+# 删除作者
+def del_author(request):
+    pk = request.GET.get('pk')
+    models.Author.objects.filter(pk=pk).delete()
+    return redirect('/author_list/')
+
+
+# 编辑作者
+def edit_author(request):
+    # 查询编辑的作者对象
+    pk = request.GET.get('pk')
+    author_obj = models.Author.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        name = request.POST.get('author_name')
+        books = request.POST.getlist('books')
+        # 修改对象的数据
+        author_obj.name = name
+        author_obj.save()
+        # 多对多的关系
+        author_obj.books.set(books)  #  每次重新设置
+        # 重定向
+        return  redirect('/author_list/')
+
+    # 查询所有的书籍
+    all_books = models.Book.objects.all()
+    return render(request, 'edit_author.html', {'author_obj': author_obj, 'all_books': all_books})
