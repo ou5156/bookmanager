@@ -59,7 +59,6 @@ def edit_publisher(request):
             obj.name = publisher_name
             obj.save()
             return redirect('/publisher_list/')
-
     return render(request,'edit_publisher.html',{'obj':obj,'error':error})
 
 
@@ -88,7 +87,7 @@ def add_book(request):
 def del_book(request):
     pk = request.GET.get('id')
     models.Book.objects.filter(pk=pk).delete()
-    return redirect('/book_list')
+    return redirect('/book_list/')
 
 
 # 编辑书籍
@@ -124,7 +123,9 @@ def add_author(request):
     if request.method == 'POST':
         author_name = request.POST.get('author_name')
         books = request.POST.getlist('books')
-
+        print(request.POST)
+        print(books)
+        print(author_name)
         author_obj = models.Author.objects.create(name=author_name,)
         author_obj.books.set(books)
         return redirect('/author_list/')
