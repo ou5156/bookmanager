@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7460f2af-c708-43be-a3b7-4c2ccd184bb0" name="默认" comment="author">
-      <change beforePath="$PROJECT_DIR$/.idea/bookmanager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bookmanager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmanager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanager/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_author.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/author_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/author_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/book_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit_author.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/publisher_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/publisher_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +221,7 @@
       <workItem from="1577808653118" duration="3455000" />
       <workItem from="1577817124863" duration="740000" />
       <workItem from="1577817874679" duration="13220000" />
-      <workItem from="1578921240583" duration="9831000" />
+      <workItem from="1578921240583" duration="10484000" />
     </task>
     <task id="LOCAL-00001" summary="默认">
       <created>1577852629189</created>
