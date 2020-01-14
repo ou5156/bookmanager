@@ -55,8 +55,7 @@ ROOT_URLCONF = 'bookmanager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,22 +75,22 @@ WSGI_APPLICATION = 'bookmanager.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'bookmanager',
-    #     'HOST': '192.168.1.142',
-    #     'PORT': 3306,
-    #     'USER': 'bookmanager',
-    #     'PASSWORD': 'bookmanager',
-    # },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bookmanager',
-        'HOST': '127.0.0.1',
+        'HOST': '192.168.1.142',
         'PORT': 3306,
         'USER': 'bookmanager',
-        'PASSWORD': 'linke-.-123',
-    }
+        'PASSWORD': 'bookmanager',
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'bookmanager',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': 3306,
+    #     'USER': 'bookmanager',
+    #     'PASSWORD': 'linke-.-123',
+    # }
 }
 
 

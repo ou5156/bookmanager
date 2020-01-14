@@ -5,9 +5,9 @@ from app01 import models
 # 展示出版社
 def publisher_list(request):
     # 从数据库中查询到出版社的信息
-    all_publishers = models.Publisher.objects.all().order_by('pk')
+    all_publisher = models.Publisher.objects.all().order_by('pk')
     # 返回一个包含出版社信息的页面
-    return render(request, 'publisher_list.html', {'all_publishers': all_publishers})
+    return render(request, 'publisher_list.html', {'all_publisher': all_publisher})
 
 
 # 新增出版社
@@ -139,7 +139,6 @@ def add_book(request):
 
     # 查询所有的出版社
     all_publishers = models.Publisher.objects.all()
-
     return render(request, 'add_book.html', {'all_publishers': all_publishers})
 
 
@@ -171,7 +170,6 @@ def edit_book(request):
         return redirect('/book_list/')
     # 查询所有的出版社
     all_publishers = models.Publisher.objects.all()
-
     return render(request, 'edit_book.html', {'book_obj': book_obj, 'all_publishers': all_publishers})
 
 
@@ -234,11 +232,6 @@ def edit_author(request):
         # 重定向
         return  redirect('/author_list/')
 
-
-
     # 查询所有的书籍
     all_books = models.Book.objects.all()
-
-
-
     return render(request, 'edit_author.html', {'author_obj': author_obj, 'all_books': all_books})

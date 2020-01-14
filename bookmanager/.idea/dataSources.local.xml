@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL for 5.1 - bookmanager@127.0.0.1" uuid="d7f02410-9033-4f39-8002-e1f6b8726417">
-      <database-info product="MySQL" version="5.7.28-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" dbms="MYSQL" exact-version="5.7.28" exact-driver-version="5.1">
+    <data-source name="bookmanager@192.168.1.142" uuid="10afec9a-3f02-4315-91bf-c120c5bc948d">
+      <database-info product="MySQL" version="5.5.62" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>bookmanager</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema" qname="bookmanager" />
-        </introspection-scope>
-      </schema-mapping>
+      <introspection-schemas>*:bookmanager</introspection-schemas>
     </data-source>
   </component>
 </project>
