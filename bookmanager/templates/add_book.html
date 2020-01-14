@@ -23,52 +23,85 @@
 {#</body>#}
 {#</html>#}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>add_book</title>
-    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.css">
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2" style="margin-top: 70px">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">新增书籍</h3>
-                </div>
-                <div class="panel-body">
-                    <form class="form-horizontal" method="post" action="">
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">书名： </label>
-                            <div class="col-sm-8">
-                                <input type="text" name="book_name" class="form-control" id="inputEmail3"
-                                       placeholder="书名">
-                            </div>
-                        </div>
-                        <div class="text-center text-danger">{{ error }}</div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">出版社：</label>
-                            <div class="col-sm-4">
-                                <select name="pub_id" id="" class="form-control">
-                                    {% for publisher in all_publishers %}
-                                        <option value="{{ publisher.pk }}">{{ publisher.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">提交</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>add_book</title>#}
+{#    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.css">#}
+{#</head>#}
+{#<body>#}
+{#<div class="container">#}
+{#    <div class="row">#}
+{#        <div class="col-lg-8 col-lg-offset-2" style="margin-top: 70px">#}
+{#            <div class="panel panel-primary">#}
+{#                <div class="panel-heading">#}
+{#                    <h3 class="panel-title">新增书籍</h3>#}
+{#                </div>#}
+{#                <div class="panel-body">#}
+{#                    <form class="form-horizontal" method="post" action="">#}
+{#                        <div class="form-group">#}
+{#                            <label for="inputEmail3" class="col-sm-2 control-label">书名： </label>#}
+{#                            <div class="col-sm-8">#}
+{#                                <input type="text" name="book_name" class="form-control" id="inputEmail3"#}
+{#                                       placeholder="书名">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="text-center text-danger">{{ error }}</div>#}
+{#                        <div class="form-group">#}
+{#                            <label for="inputEmail3" class="col-sm-2 control-label">出版社：</label>#}
+{#                            <div class="col-sm-4">#}
+{#                                <select name="pub_id" id="" class="form-control">#}
+{#                                    {% for publisher in all_publishers %}#}
+{#                                        <option value="{{ publisher.pk }}">{{ publisher.name }}</option>#}
+{#                                    {% endfor %}#}
+{#                                </select>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <div class="col-sm-offset-2 col-sm-10">#}
+{#                                <button type="submit" class="btn btn-default">提交</button>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+
+{% extends 'add_base.html' %}
+
+{% block add_title %}新增书籍{% endblock %}
+
+{% block content %}
+    <form class="form-horizontal" method="post" action="">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">书名： </label>
+            <div class="col-sm-8">
+                <input type="text" name="book_name" class="form-control" id="inputEmail3"
+                       placeholder="书名">
             </div>
         </div>
-    </div>
-</div>
-
-</body>
-</html>
+        <div class="text-center text-danger">{{ error }}</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">出版社：</label>
+            <div class="col-sm-4">
+                <select name="pub_id" id="" class="form-control">
+                    {% for publisher in all_publishers %}
+                        <option value="{{ publisher.pk }}">{{ publisher.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">提交</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
