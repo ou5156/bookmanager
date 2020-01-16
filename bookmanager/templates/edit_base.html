@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block page_title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.css">
+    {% load static %}
+{#    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7/css/bootstrap.css">#}
+    <link rel="stylesheet" href="{% static '/plugins/bootstrap-3.3.7/css/bootstrap.css' %}">
 </head>
 <body>
+
+{% include 'nav.html' %}
 
 <div class="container">
     <div class="row">
